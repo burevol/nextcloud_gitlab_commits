@@ -1,0 +1,58 @@
+{
+    "translations": {
+        "": {
+            "Latest GitLab commits": "Последние коммиты GitLab",
+            "GitLab commits": "Коммиты GitLab",
+            "GitLab connection": "Подключение к GitLab",
+            "GitLab base URL": "Базовый адрес GitLab",
+            "Personal access token": "Personal access token",
+            "Project id or path": "ID или путь проекта",
+            "Branch": "Ветка",
+            "Cache lifetime in seconds": "Время кэширования в секундах",
+            "Number of commits": "Количество коммитов",
+            "Save": "Сохранить",
+            "Settings saved.": "Настройки сохранены.",
+            "The settings could not be saved.": "Не удалось сохранить настройки.",
+            "Enter a valid base URL, starting with http:// or https://.": "Укажите корректный базовый адрес, начинающийся с http:// или https://.",
+            "The cache lifetime has to be between {min} and {max} seconds.": "Время кэширования должно быть от {min} до {max} секунд.",
+            "The number of commits has to be between {min} and {max}.": "Количество коммитов должно быть от {min} до {max}.",
+            "Remove the stored token": "Удалить сохранённый токен",
+            "A token is stored, leave the field empty to keep it": "Токен сохранён, оставьте поле пустым, чтобы его не менять",
+            "glpat-...": "glpat-...",
+            "Create a token in GitLab with the read_api scope: Profile → Preferences → Access tokens.": "Создайте токен в GitLab с областью read_api: Профиль → Настройки → Токены доступа.",
+            "Without /api/v4, for example https://gitlab.example.com": "Без /api/v4, например https://gitlab.example.com",
+            "The numeric project id and the project path are both supported.": "Поддерживаются и числовой ID проекта, и путь к проекту.",
+            "Commits of this branch are shown, main by default.": "Показываются коммиты этой ветки, по умолчанию main.",
+            "A successful GitLab response is cached for this long, so the dashboard does not query GitLab on every reload.": "Успешный ответ GitLab кэшируется на это время, чтобы панель управления не обращалась к GitLab при каждой перезагрузке.",
+            "Maximum number of commits shown in the widget, 7 by default.": "Максимальное число коммитов в виджете, по умолчанию 7.",
+            "The dashboard widget reads the latest commits of a single GitLab project with a personal access token. The token is stored in the Nextcloud database and is never sent to the browser or written to the log.": "Виджет на панели управления читает последние коммиты одного проекта GitLab с помощью personal access token. Токен хранится в базе данных Nextcloud и никогда не передаётся в браузер и не попадает в лог.",
+            "No commits": "Нет коммитов",
+            "Could not load GitLab commits.": "Не удалось загрузить коммиты GitLab.",
+            "GitLab is not configured yet. An administrator can set it up in the administration settings.": "GitLab ещё не настроен. Администратор может указать параметры подключения в настройках.",
+            "GitLab is not configured.": "GitLab не настроен.",
+            "GitLab rejected the request. Please check the personal access token.": "GitLab отклонил запрос. Проверьте personal access token.",
+            "GitLab returned the HTTP status {status}.": "GitLab вернул HTTP-статус {status}.",
+            "GitLab returned an unexpected response.": "GitLab вернул неожиданный ответ.",
+            "Could not reach GitLab. Please check the base URL and the network connection.": "Не удалось связаться с GitLab. Проверьте базовый адрес и сетевое подключение.",
+            "All commits in GitLab": "Все коммиты в GitLab",
+            "(no commit message)": "(без сообщения коммита)",
+            "just now": "только что",
+            "_%n minute ago_::_%n minutes ago_": [
+                "%n минуту назад",
+                "%n минуты назад",
+                "%n минут назад"
+            ],
+            "_%n hour ago_::_%n hours ago_": [
+                "%n час назад",
+                "%n часа назад",
+                "%n часов назад"
+            ],
+            "_%n day ago_::_%n days ago_": [
+                "%n день назад",
+                "%n дня назад",
+                "%n дней назад"
+            ]
+        }
+    },
+    "pluralForm": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
+}

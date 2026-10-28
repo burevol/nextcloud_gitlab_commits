@@ -1,0 +1,13 @@
+/**
+ * SPDX-FileCopyrightText: 2026 GitLab commits contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* Nextcloud 27 draws the dashboard widget header icon from the CSS class
+   returned by IWidget::getIconClass(). Newer releases prefer IIconWidget. */
+.icon-gitlab-commits {
+	background-image: url('../img/gitlab.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 32px;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - SPDX-FileCopyrightText: 2026 GitLab commits contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+  -
+  - Original artwork, an abstract commit graph in the GitLab brand colour.
+  - It is not the official GitLab logo.
+  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="GitLab commits">
+	<rect x="1" y="1" width="30" height="30" rx="7" fill="#fc6d26"/>
+	<path d="M7 12h5.5a5 5 0 0 1 5 5v0a5 5 0 0 0 5 5H25" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+	<circle cx="7" cy="12" r="2.6" fill="#ffffff"/>
+	<circle cx="17.5" cy="17" r="3" fill="#fc6d26" stroke="#ffffff" stroke-width="2.2"/>
+	<circle cx="25" cy="22" r="2.6" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,55 @@
+{
+    "translations": {
+        "": {
+            "Latest GitLab commits": "Latest GitLab commits",
+            "GitLab commits": "GitLab commits",
+            "GitLab connection": "GitLab connection",
+            "GitLab base URL": "GitLab base URL",
+            "Personal access token": "Personal access token",
+            "Project id or path": "Project id or path",
+            "Branch": "Branch",
+            "Cache lifetime in seconds": "Cache lifetime in seconds",
+            "Number of commits": "Number of commits",
+            "Save": "Save",
+            "Settings saved.": "Settings saved.",
+            "The settings could not be saved.": "The settings could not be saved.",
+            "Enter a valid base URL, starting with http:// or https://.": "Enter a valid base URL, starting with http:// or https://.",
+            "The cache lifetime has to be between {min} and {max} seconds.": "The cache lifetime has to be between {min} and {max} seconds.",
+            "The number of commits has to be between {min} and {max}.": "The number of commits has to be between {min} and {max}.",
+            "Remove the stored token": "Remove the stored token",
+            "A token is stored, leave the field empty to keep it": "A token is stored, leave the field empty to keep it",
+            "glpat-...": "glpat-...",
+            "Create a token in GitLab with the read_api scope: Profile → Preferences → Access tokens.": "Create a token in GitLab with the read_api scope: Profile → Preferences → Access tokens.",
+            "Without /api/v4, for example https://gitlab.example.com": "Without /api/v4, for example https://gitlab.example.com",
+            "The numeric project id and the project path are both supported.": "The numeric project id and the project path are both supported.",
+            "Commits of this branch are shown, main by default.": "Commits of this branch are shown, main by default.",
+            "A successful GitLab response is cached for this long, so the dashboard does not query GitLab on every reload.": "A successful GitLab response is cached for this long, so the dashboard does not query GitLab on every reload.",
+            "Maximum number of commits shown in the widget, 7 by default.": "Maximum number of commits shown in the widget, 7 by default.",
+            "The dashboard widget reads the latest commits of a single GitLab project with a personal access token. The token is stored in the Nextcloud database and is never sent to the browser or written to the log.": "The dashboard widget reads the latest commits of a single GitLab project with a personal access token. The token is stored in the Nextcloud database and is never sent to the browser or written to the log.",
+            "No commits": "No commits",
+            "Could not load GitLab commits.": "Could not load GitLab commits.",
+            "GitLab is not configured yet. An administrator can set it up in the administration settings.": "GitLab is not configured yet. An administrator can set it up in the administration settings.",
+            "GitLab is not configured.": "GitLab is not configured.",
+            "GitLab rejected the request. Please check the personal access token.": "GitLab rejected the request. Please check the personal access token.",
+            "GitLab returned the HTTP status {status}.": "GitLab returned the HTTP status {status}.",
+            "GitLab returned an unexpected response.": "GitLab returned an unexpected response.",
+            "Could not reach GitLab. Please check the base URL and the network connection.": "Could not reach GitLab. Please check the base URL and the network connection.",
+            "All commits in GitLab": "All commits in GitLab",
+            "(no commit message)": "(no commit message)",
+            "just now": "just now",
+            "_%n minute ago_::_%n minutes ago_": [
+                "%n minute ago",
+                "%n minutes ago"
+            ],
+            "_%n hour ago_::_%n hours ago_": [
+                "%n hour ago",
+                "%n hours ago"
+            ],
+            "_%n day ago_::_%n days ago_": [
+                "%n day ago",
+                "%n days ago"
+            ]
+        }
+    },
+    "pluralForm": "nplurals=2; plural=(n != 1);"
+}

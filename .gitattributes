@@ -1,0 +1,13 @@
+# Normalize line endings: PHP, JSON, XML, CSS and Markdown use LF everywhere.
+* text=auto eol=lf
+
+*.php   text eol=lf
+*.json  text eol=lf
+*.xml   text eol=lf
+*.css   text eol=lf
+*.md    text eol=lf
+*.svg   text eol=lf
+
+*.png   binary
+*.jpg   binary
+*.zip   binary

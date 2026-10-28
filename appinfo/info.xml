@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  - SPDX-FileCopyrightText: 2026 GitLab commits contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+  -->
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>gitlab_commits</id>
+	<name>GitLab commits</name>
+	<summary>Shows the latest commits of a GitLab project on the dashboard</summary>
+	<description>Adds a dashboard widget that lists the latest commits of a single GitLab project. The Nextcloud server queries the GitLab REST API v4 directly, so no webhook or intermediate service is required. The connection (GitLab URL, personal access token, project and branch) is configured by an administrator. Results are cached for a configurable amount of time, so the widget does not hit GitLab on every dashboard reload.</description>
+	<version>1.0.0</version>
+	<licence>agpl</licence>
+	<author>GitLab commits contributors</author>
+	<namespace>GitLabCommits</namespace>
+	<category>dashboard</category>
+	<category>integration</category>
+	<dependencies>
+		<nextcloud min-version="27"/>
+	</dependencies>
+	<settings>
+		<admin>OCA\GitLabCommits\Settings\AdminSettings</admin>
+	</settings>
+</info>

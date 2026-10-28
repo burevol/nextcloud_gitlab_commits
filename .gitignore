@@ -1,0 +1,20 @@
+# Editors and IDEs
+.idea/
+.vscode/
+*.iml
+*.sublime-project
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependencies and build output
+node_modules/
+vendor/
+
+# Test and tooling leftovers
+.phpunit.result.cache
+.php-cs-fixer.cache
+coverage/
+*.log

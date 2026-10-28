@@ -1,0 +1,48 @@
+/**
+ * SPDX-FileCopyrightText: 2026 GitLab commits contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+#gitlab-commits .gitlab-commits-settings p {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	margin-bottom: 18px;
+	max-width: 480px;
+}
+
+#gitlab-commits .gitlab-commits-settings label {
+	font-weight: bold;
+}
+
+#gitlab-commits .gitlab-commits-settings em {
+	color: var(--color-text-maxcontrast);
+	font-style: normal;
+}
+
+#gitlab-commits .gitlab-commits-settings input[type='number'] {
+	max-width: 120px;
+}
+
+#gitlab-commits .gitlab-commits-settings p.gitlab-commits-checkbox {
+	flex-direction: row;
+	align-items: center;
+	max-width: none;
+}
+
+#gitlab-commits .gitlab-commits-settings p.gitlab-commits-checkbox label {
+	font-weight: normal;
+}
+
+#gitlab-commits .gitlab-commits-message {
+	max-width: 480px;
+	margin-bottom: 16px;
+}
+
+#gitlab-commits .gitlab-commits-message--success {
+	color: var(--color-success-text);
+}
+
+#gitlab-commits .gitlab-commits-message--error {
+	color: var(--color-error-text);
+}
