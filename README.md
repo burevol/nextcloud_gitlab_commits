@@ -1,5 +1,7 @@
 # gitlab_commits — виджет Dashboard «Последние коммиты GitLab»
 
+[![tests](https://github.com/burevol/nextcloud_gitlab_commits/actions/workflows/tests.yml/badge.svg)](https://github.com/burevol/nextcloud_gitlab_commits/actions/workflows/tests.yml)
+
 Приложение Nextcloud, которое добавляет на панель управления виджет со списком
 последних коммитов одного проекта локального GitLab. Сервер Nextcloud сам
 запрашивает GitLab REST API v4; webhook и промежуточные сервисы не используются.
@@ -159,27 +161,33 @@ grep -c "glpat-" /var/www/nextcloud/data/nextcloud.log   # ожидается 0
 Логика приложения покрыта поведенческими тестами (43 сценария: форма запроса к
 GitLab, нормализация коммитов, кэш и TTL, отдача устаревших данных при сбое,
 401/403, timeout, невалидный JSON, лимиты, виджет, админ-форма, сохранение
-настроек, переводы en/ru). Тесты лежат **вне** каталога приложения, используют
-заглушки публичного API Nextcloud 27 (`php-tests/stubs.php`) и не требуют
-установленного Nextcloud.
-
-Набор был прогнан на настоящем PHP 8.0, 8.3 и 8.5 (PHP в WebAssembly) с
-`error_reporting(E_ALL)`: 43 passed, 0 failed, без warning/notice/deprecated.
+настроек, переводы en/ru). Тесты лежат в каталоге `tests/`, используют заглушки
+публичного API Nextcloud 27 (`tests/stubs.php`) и не требуют установленного
+Nextcloud — только PHP 8.0+:
 
 ```bash
-# вариант 1: родной PHP 8.0+ на машине
-APP_ROOT=./gitlab_commits TEST_ROOT=./php-tests php php-tests/run.php
-
-# вариант 2: PHP в WebAssembly (Node.js, без установки PHP)
-cd .phpwasm
-npm install php-wasm
-node run-tests.mjs .. 8.0
+php tests/run.php        # 43 passed, 0 failed
 ```
+
+Структура набора:
+
+| Файл                  | Назначение                                                     |
+|-----------------------|----------------------------------------------------------------|
+| `tests/run.php`       | точка входа                                                    |
+| `tests/bootstrap.php` | автозагрузка `OCA\GitLabCommits\*` и пути относительно репозитория |
+| `tests/stubs.php`     | заглушки `OCP\*`: конфиг, кэш, HTTP-клиент, L10N, виджеты, настройки |
+| `tests/cases.php`     | сами сценарии                                                  |
+
+Те же тесты запускаются в CI (`.github/workflows/tests.yml`) на PHP 8.0–8.4 при
+каждом пуше и pull request, плюс `php -l` по всем файлам приложения. Локально
+набор дополнительно прогнан на PHP 8.0, 8.3 и 8.5 через PHP в WebAssembly с
+`error_reporting(E_ALL)`: без warning/notice/deprecated.
 
 ## Структура приложения
 
 ```
 gitlab_commits/
+├── .github/workflows/tests.yml      CI: php -l + тесты на PHP 8.0–8.4
 ├── appinfo/
 │   ├── info.xml                     метаданные, Nextcloud 27+, регистрация
 │   │                                админ-настроек (<settings><admin>)
@@ -203,6 +211,12 @@ gitlab_commits/
 │   └── Settings/AdminSettings.php   админ-форма (IDelegatedSettings)
 ├── templates/
 │   └── settings/admin.php
+├── tests/                           поведенческие тесты без Nextcloud
+│   ├── run.php
+│   ├── bootstrap.php
+│   ├── stubs.php
+│   └── cases.php
+├── LICENSE                          AGPL-3.0
 └── README.md
 ```
 

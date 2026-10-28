@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2026 GitLab commits contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Lints the app and runs the behaviour tests on every supported PHP version.
+# The suite needs nothing but PHP: Nextcloud is replaced by tests/stubs.php.
+
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: PHP ${{ matrix.php }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Nextcloud 27 still supports PHP 8.0, which needs the older image.
+          - php: '8.0'
+            os: ubuntu-22.04
+          - php: '8.1'
+            os: ubuntu-22.04
+          - php: '8.2'
+            os: ubuntu-latest
+          - php: '8.3'
+            os: ubuntu-latest
+          - php: '8.4'
+            os: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: none
+
+      - name: PHP syntax check
+        run: find . -name '*.php' -not -path './tests/*' -print0 | xargs -0 -n1 php -l
+
+      - name: Behaviour tests
+        run: php tests/run.php
